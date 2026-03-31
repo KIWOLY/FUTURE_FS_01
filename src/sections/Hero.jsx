@@ -1,7 +1,13 @@
 import React from 'react'
 import Button from '../component/Button';
-import { ArrowRight, Github, Instagram, Linkedin} from 'lucide-react';
+import { ArrowRight, ChevronDown, Github, Instagram, Linkedin} from 'lucide-react';
 import SvgButton from '../component/SvgButton';
+
+
+const skills=[
+    "Html", "Css", "Js", "React", "Tailwind","Python","Django","DRF","Graphql","Postgress","Git","Github","Docker","CI/CD","Iaac","Dart","Flutter"
+]
+
 
 const Hero = () => {
     return (
@@ -88,10 +94,38 @@ const Hero = () => {
                                            <span  className='text-sm font-medium'>Available for work </span>
                                     </div>
                                 </div>
+
+                                {/* stats badge */}
+                                <div className='absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500'>
+                                    <div className='text-2xl font-bold text-primary'>3+ </div>
+                                     <div>Years Exp </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* skills sections */}
+                <div className='mt-20 animate-fade-in animation-delay-600'>
+                    <p className='text-sm text-muted-foreground mb-6 text-center '>
+                        Technologies I  work with
+                    </p>
+                    <div className='relative overflow-hidden '>
+                        <div className='flex animate-marquee'>
+                            {[...skills, ...skills].map((skill, idx)=> (
+                                <div key={idx} className='px-8 py-4'>
+                                    <span className='text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground'>{skill}</span>
+ 
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800'>
+                <a href="#about"  className='flex flex-col items-center gap-2 text-muted-foreground'>
+                    <span className='text-xs uppercase tracking-wider'>Scroll</span><ChevronDown className='w-6 h-6 animate-bounce'/>
+                </a>
             </div>
 
         </section>
