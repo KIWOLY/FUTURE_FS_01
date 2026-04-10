@@ -29,7 +29,7 @@ const Navbar = () => {
     return (
         <header className={`fixed top-0 right-0 left-0 transition-all duration-500  z-50 ${isScrolling ? 'glass-strong py-3' : 'bg-transparent py-5'}`}>
             <nav className="container mx-auto flex items-center justify-between px-6">
-                <a href="#" className="text-xl font-bold tracking-tight  hover:text-primary">KIWOLY <span className="text-primary">.</span></a>
+                <a href="#" className="text-xl font-bold tracking-tight  hover:text-primary">KIWOLY IJ <span className="text-primary">.</span></a>
                 <div className="hidden md:flex items-center gap-1">
                     <div className="galss rounded-full px-2 py-1 items-center gap-1">
                         {navLinks.map((link, index) => (
