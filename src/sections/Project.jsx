@@ -34,7 +34,10 @@ const projects = [
 
 const Project = () => {
   return (
-    <section></section>
+    <section id="project" className='py-32 relative overflow-hidden'>
+      
+  
+    </section>
   )
 }
 
