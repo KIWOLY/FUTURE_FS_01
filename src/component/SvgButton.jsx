@@ -1,7 +1,7 @@
 import React from 'react'
 import {  Download } from 'lucide-react';
 
-const SvgButton = () => {
+const SvgButton = ({children}) => {
     return (
         <div><button className='relative px-6 py-3 text-white font-semibold border-2 border-white rounded-lg overflow-hidden group'>
             {/* Animated SVG border */}
@@ -20,7 +20,7 @@ const SvgButton = () => {
                     }}
                 />
             </svg>
-            <span className='relative z-10 flex items-center gap-2 group-hover:text-primary transition'> <Download className='w-5 h-5' /> Download  CV</span>
+            <span className='relative z-10 flex items-center gap-2 group-hover:text-primary transition'>{children} </span>
         </button></div>
     )
 }

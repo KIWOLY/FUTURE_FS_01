@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../component/Button';
-import { ArrowRight, ChevronDown, Github, Instagram, Linkedin} from 'lucide-react';
+import { ArrowRight, ChevronDown,Download, Github, Instagram, Linkedin} from 'lucide-react';
 import SvgButton from '../component/SvgButton';
 
 
@@ -62,7 +62,9 @@ const Hero = () => {
                             <Button size='lg'>
                                 Contact Me <ArrowRight className='w-5 h-5' />
                             </Button>
-                            <SvgButton/>
+                            <SvgButton>
+                                <Download className='w-5 h-5' /> Download  CV
+                            </SvgButton>
                         </div>
 
                         {/* social link */}
