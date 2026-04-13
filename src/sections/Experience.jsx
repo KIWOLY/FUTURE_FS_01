@@ -35,7 +35,6 @@ const experiences = [
 
 
 
-
 const Experience = () => {
 
     return (
@@ -43,7 +42,7 @@ const Experience = () => {
             <div className='absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2' />
             <div className='container mx-auto px-6 relative z-10' />
             {/* section header */}
-            <div className='max-w-3xl mb-16'>
+            <div className='max-w-3xl mb-16 text-center'>
                 <span className='text-sm text-secondary-foreground font-medium uppercase animate-fade-in'> Career Journey</span>
                 <h2 className='text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground animate-fade-in animation-delay-100'>
                     Experience that <span className='font-serif italic font-normal text-white'> speak volumes.</span>  </h2>
