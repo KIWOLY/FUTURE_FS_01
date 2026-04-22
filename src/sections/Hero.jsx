@@ -11,9 +11,9 @@ const skills = [
 
 const Hero = () => {
     return (
-        <section className='relative min-h-screen flex items-center overflow-hidden'>
+        <section id='home' className='relative min-h-screen flex items-center overflow-hidden'>
             <div className='absolute inset-0'>
-                <img src="/hero-bg.jpg" alt="hero image " className='h-full w-full opacity-40 object-cover' />
+                <img src="/hero-bg.jpg" alt="DevOps cloud infrastructure background" className='h-full w-full opacity-40 object-cover' />
             </div>
             <div className='absolute inset-0 bg-gradient-to-b from-background/20  via-background/80 to-background' />
 
@@ -45,13 +45,17 @@ const Hero = () => {
                         </div>
                         {/* Headline */}
                         <div className='space-y-4'>
-                            <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100'>
+                            <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold leading-tight pb-4'>
+                                Innocent Kiwoly <br />
+                                DevOps Engineer & Full-Stack Developer
+                            </h1>
+                            <h2 className='text-xl md:text-2xl lg:text-3xl  leading-tight animate-fade-in animation-delay-100'>
                                 Building <span className='text-primary glow-text'>applications</span>
                                 <br />
                                 and scalable
                                 <br />
                                 <span className='font-serif italic text-white font-normal'>DevOps solutions</span>
-                            </h1>
+                            </h2>
                             <p className='text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200'>
                                 Hi, I'm Kiwoly, a software engineer working with DevOps.
                                 I build applications and focus on deploying, automating, and managing them efficiently
@@ -95,7 +99,7 @@ const Hero = () => {
                         {/* profile image */}
                         <div className='relative max-w-md mx-auto'>
                             <div className='relative glass rounded-3xl p-2 glow-border'>
-                                <img src="/profile4.jpeg" alt="Kiwoly" className='w-full aspect-[4/5] object-cover rounded-2xl' />
+                                <img src="/profile4.jpeg" alt="Innocent Kiwoly DevOps Engineer profile photo"  loading="lazy"    className='w-full aspect-[4/5] object-cover rounded-2xl' />
 
                                 {/* Floating Badge */}
                                 <div className='absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float '>

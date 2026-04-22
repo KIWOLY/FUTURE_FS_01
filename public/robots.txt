@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://kiwoly.tlms.live/sitemap.xml
