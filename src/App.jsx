@@ -32,6 +32,38 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://kiwoly.tlms.live/" />
         <meta property="og:image" content="/folio.png" />
+
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Innocent Kiwoly",
+            "url": "http://kiwoly.tlms.live/",
+            "jobTitle": "DevOps Engineer",
+            "sameAs": [
+              "https://github.com/KIWOLY",
+              "https://www.linkedin.com/in/innocent-kiwoly-35b8b1355/"
+            ],
+            "knowsAbout": [
+              "Kubernetes",
+              "Docker",
+              "CI/CD",
+              "Terraform",
+              "Django",
+              "React",
+              "Flutter"
+            ]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Innocent Kiwoly Portfolio",
+            "url": "http://kiwoly.tlms.live/"
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen overflow-x-hidden">
