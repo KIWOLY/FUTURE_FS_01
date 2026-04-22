@@ -3,10 +3,10 @@ import React from 'react'
 const experiences = [
       {
         period: "2026",
-        role: "Full Stack Developer ",
-        company: "FI company",
+        role: "Full Stack Developer Intern" ,
+        company: "Future Interns",
         description:
-            "Two-month internship as a Full Stack Developer. Will be involved in designing and developing web applications using both frontend and backend technologies, contributing to real-world projects and gaining industry experience.",
+            "One-month internship as a Full Stack Developer. involved in designing and developing web applications using both frontend and backend technologies, contributing to real-world projects and gaining industry experience.",
 
         current: false,
     },
@@ -23,7 +23,7 @@ const experiences = [
     },
       {
         period: "2025",
-        role: "IoT and devops",
+        role: "IoT and DevOps",
         company: "International Programme(Blended Intensive Programme (BIP) -Belgium)",
         description:
             "Participated in an international Blended Intensive Programme (BIP) hosted in Belgium. Collaborated with students from nine countries to address a real-world learning challenge, enhancing cross-cultural communication, teamwork, and problem-solving skills.",

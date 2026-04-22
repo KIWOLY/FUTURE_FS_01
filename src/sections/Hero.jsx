@@ -1,11 +1,11 @@
 import React from 'react'
 import Button from '../component/Button';
-import { ArrowRight, ChevronDown,Download, Github, Instagram, Linkedin} from 'lucide-react';
+import { ArrowRight, ChevronDown, Download, Github, Instagram, Linkedin } from 'lucide-react';
 import SvgButton from '../component/SvgButton';
 
 
-const skills=[
-    "Html", "Css", "Js", "React", "Tailwind","Python","Django","DRF","Graphql","Postgress","Git","Github","Docker","CI/CD","Iaac","Dart","Flutter"
+const skills = [
+    "Html", "Css", "Js", "React", "Tailwind", "Python", "Django", "DRF", "Graphql", "Postgress", "Git", "Github", "Docker", "CI/CD", "Iaac", "Dart", "Flutter"
 ]
 
 
@@ -58,24 +58,34 @@ const Hero = () => {
                             </p>
                         </div>
                         {/* CTAs- call to actions */}
-                        <div  className='flex items-center gap-2'>
-                            <Button size='lg'>
-                                Contact Me <ArrowRight className='w-5 h-5' />
-                            </Button>
-                            <SvgButton>
-                                <Download className='w-5 h-5' /> Download  CV
-                            </SvgButton>
+                        <div className='flex items-center gap-2'>
+                            <a
+                                href="https://wa.me/255654207970?text=Hello,%20welcome%20to%20Kiwoly.%20I%20am%20interested%20in%20your%20DevOps%20and%20Full-Stack%20services."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Button size='lg'>
+                                    Contact Me <ArrowRight className='w-5 h-5' />
+                                </Button>
+                            </a>
+                            <a href="/kiwoly.pdf" download>
+                                <SvgButton>
+                                    <Download className='w-5 h-5' />
+                                    Download CV
+                                </SvgButton>
+                            </a>
                         </div>
 
                         {/* social link */}
                         <div className='flex items-baseline gap-4 animate-fade-in animation-delay-400'>
                             <span className='text-sm text-muted-foreground'>Follow :</span>
                             {[
-                                {icon:Github, href:"#"},
-                                {icon:Linkedin, href:"#"},
-                                {icon:Instagram, href:"#"}
-                            ].map((social, index)=> (
-                                <a key={index} href={social.href} className='p-2 rouded-full glass hover:bg-primary/10 hover:text-primary'> {< social.icon className='w-5 h-5'/>}</a>
+                                { icon: Github, href: "https://github.com/KIWOLY" },
+                                { icon: Linkedin, href: "https://www.linkedin.com/in/innocent-kiwoly-35b8b1355/" },
+                                { icon: Instagram, href: "https://www.instagram.com/iaminnoh_john/?hl=en" }
+                            ].map((social, index) => (
+                                <a key={index} href={social.href} target="_blank"
+                                    rel="noopener noreferrer" className='p-2 rouded-full glass hover:bg-primary/10 hover:text-primary'> {< social.icon className='w-5 h-5' />}</a>
                             ))}
                         </div>
 
@@ -88,19 +98,19 @@ const Hero = () => {
                                 <img src="/profile4.jpeg" alt="Kiwoly" className='w-full aspect-[4/5] object-cover rounded-2xl' />
 
                                 {/* Floating Badge */}
-                                <div  className='absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float '>
+                                <div className='absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float '>
                                     <div className='flex items-center gap-3'>
                                         <div className='w-3 h-3 bg-green-500 rounded-full animate-pulse'>
 
                                         </div>
-                                           <span  className='text-sm font-medium'>Available for work </span>
+                                        <span className='text-sm font-medium'>Available for work </span>
                                     </div>
                                 </div>
 
                                 {/* stats badge */}
                                 <div className='absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500'>
                                     <div className='text-2xl font-bold text-primary'>3+ </div>
-                                     <div>Years Exp </div>
+                                    <div>Years Exp </div>
                                 </div>
                             </div>
                         </div>
@@ -113,10 +123,10 @@ const Hero = () => {
                     </p>
                     <div className='relative overflow-hidden '>
                         <div className='flex animate-marquee'>
-                            {[...skills, ...skills].map((skill, idx)=> (
+                            {[...skills, ...skills].map((skill, idx) => (
                                 <div key={idx} className='px-8 py-4'>
                                     <span className='text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground'>{skill}</span>
- 
+
                                 </div>
                             ))}
                         </div>
@@ -125,8 +135,8 @@ const Hero = () => {
             </div>
 
             <div className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800'>
-                <a href="#about"  className='flex flex-col items-center gap-2 text-muted-foreground'>
-                    <span className='text-xs uppercase tracking-wider'>Scroll</span><ChevronDown className='w-6 h-6 animate-bounce'/>
+                <a href="#about" className='flex flex-col items-center gap-2 text-muted-foreground'>
+                    <span className='text-xs uppercase tracking-wider'>Scroll</span><ChevronDown className='w-6 h-6 animate-bounce' />
                 </a>
             </div>
 
