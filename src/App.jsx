@@ -17,9 +17,9 @@ function App() {
         <main>
           <Hero />
           <About />
-          <Contant />
           <Project />
           <Experience/>
+          <Contant/>
          
         </main>
       </div>
