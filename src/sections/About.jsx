@@ -41,15 +41,15 @@ const About = () => {
             <h2 className='text-4xl md:text-5xl  font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground'>Building the future <span className='font-serif italic font-normal text-white'> one component at a time</span></h2>
             <div className='space-y-4 text-muted-foreground animate-fade-in animation-delay-200'>
               <p>
-                I am a passionate software developer specializing in building modern web and mobile applications. My journey started with a strong foundation in backend development using Django, where I focus on designing scalable APIs and efficient systems. I enjoy turning complex problems into simple, user-friendly solutions that deliver real value.
+                I am a Software and DevOps Engineer focused on building scalable web and mobile applications. I specialize in backend development using Django, where I design reliable APIs and systems that are efficient and easy to maintain. I enjoy solving real-world problems by delivering simple and effective solutions.
               </p>
 
               <p>
-                Beyond backend development, I am continuously expanding my skills in frontend technologies like React to create complete, end-to-end applications. I have also worked on innovative projects such as IoT-based systems for environmental monitoring and real-time tracking solutions, combining software with hardware to solve real-world challenges.
+                I build complete applications using React and Flutter, working across the full stack from frontend to backend. I turn ideas into production-ready systems that are functional, user-friendly, and scalable.
               </p>
 
               <p>
-                Currently, I am exploring DevOps practices to understand how to build, deploy, and maintain applications in a production environment. My goal is to become a well-rounded engineer who not only writes clean and maintainable code but also understands the full lifecycle of modern software systems.
+                I also implement DevOps practices to deploy and manage applications in production. I work with Docker for containerization, Kubernetes for managing applications at scale, and CI/CD pipelines to automate deployment. My focus is on building systems that are reliable, scalable, and ready for real-world use.
               </p>
             </div>
             <div className='glass rounded-2xl glow-border animate-fade-in animation-delay-300'>
@@ -64,11 +64,11 @@ const About = () => {
           <div className='grid sm:grid-cols-2 gap-6'>
             {highlights.map((highlight, index) => (
               <div key={index} className='glass rounded-2xl animate-fade-in '>
-                <div className='w-12 h-12 rounded-xl bg-primary/10  flex items-center justify-center mb-4 hover:bg-primary/20'><highlight.icon className='w-6 h-6 text-primary'/></div>
+                <div className='w-12 h-12 rounded-xl bg-primary/10  flex items-center justify-center mb-4 hover:bg-primary/20'><highlight.icon className='w-6 h-6 text-primary' /></div>
                 <h3 className='text-lg font-semibold mb-2'>{highlight.title}</h3>
                 <p className='text-sm text-muted-foreground'>{highlight.description}</p>
               </div>
-              
+
             ))}
 
           </div>

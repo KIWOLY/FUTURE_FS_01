@@ -60,7 +60,7 @@ const Hero = () => {
                         {/* CTAs- call to actions */}
                         <div className='flex items-center gap-2'>
                             <a
-                                href="https://wa.me/255654207970?text=Hello,%20welcome%20to%20Kiwoly.%20I%20am%20interested%20in%20your%20DevOps%20and%20Full-Stack%20services."
+                                href="https://wa.me/255654207970?text=Hi%20Kiwoly,%20I%20want%20to%20work%20with%20you."
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
