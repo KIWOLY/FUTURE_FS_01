@@ -9,7 +9,7 @@ const projects = [
     image: "/project/e-commerce.png",
     tags: ["React", "Django", "Postgress"],
     link: "#",
-    github: "#"
+    github: "https://github.com/KIWOLY/e-commerce"
   },
   {
     title: "Air quality Monitoring",
@@ -17,7 +17,7 @@ const projects = [
     image: "/project/air_quality.png",
     tags: ["React", "Django", "Postgress", "IOT", "Lorawan", "Influx DB"],
     link: "#",
-    github: "#"
+    github: "https://github.com/AI-NextGen-Innovate-Lab/AIR-QUALITY"
   },
   {
     title: "e-learning",
@@ -25,7 +25,7 @@ const projects = [
     image: "/project/e-learning.png",
     tags: ["React", "Django", "Postgress"],
     link: "#",
-    github: "#"
+    github: "https://github.com/KIWOLY/django-elearning"
   }
 
 
@@ -60,10 +60,12 @@ const Project = () => {
                 <div className='absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60' />
                 {/* overlay Links */}
                 <div className='absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transtion-opacity duration-300'>
-                  <a href={project.link} className='p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all'>
+                  <a href={project.link} target="_blank"
+                    rel="noopener noreferrer" className='p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all'>
                     <ArrowUpRight className='w-5 h-5' />
                   </a>
-                  <a href={project.github} className='p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all'>
+                  <a href={project.github} target="_blank"
+                    rel="noopener noreferrer" className='p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all'>
                     <Github className='w-5 h-5 ' />
                   </a>
                 </div>
@@ -75,8 +77,12 @@ const Project = () => {
                   <h3 className='text-xl font-semibold group-hover:text-primary transition-colors'>
                     {project.title}
                   </h3>
-                  <ArrowUpRight className='w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 
+                  <a href={project.github} target="_blank"
+                    rel="noopener noreferrer" className='p-3 rounded-full glass transition-all'>
+                    <ArrowUpRight className='w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 
                   group-hover:-translte-y-1 transition-all'/>
+                  </a>
+
                 </div>
                 <p className='text-muted-foreground text-sm '>{project.description}</p>
                 <div className='flex flex-wrap gap-2'>
@@ -94,11 +100,14 @@ const Project = () => {
         </div>
         {/* view all */}
         <div className='text-center mt-12 animate-fade-in animation-delay-500'>
+          <a href="https://github.com/KIWOLY?tab=repositories" target="_blank"
+            rel="noopener noreferrer" className='p-3 rounded-full glass transition-all'>
+            <SvgButton>
+              View All Projects
+              <ArrowUpRight className='w-5 h-5' />
+            </SvgButton>
+          </a>
 
-          <SvgButton>
-            View All Projects
-            <ArrowUpRight  className='w-5 h-5'/>
-          </SvgButton>
         </div>
 
 

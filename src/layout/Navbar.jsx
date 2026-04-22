@@ -12,16 +12,16 @@ const navLinks = [
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isScrolling ,setIsScrolling]=useState(false);
+    const [isScrolling, setIsScrolling] = useState(false);
 
-    useEffect(()=>{
-      const handleScroll =()=> {
-        setIsScrolling(window.scrollY > 50);
-      };
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolling(window.scrollY > 50);
+        };
 
-      window.addEventListener("scroll", handleScroll);
-      return ()=> window.removeEventListener("scroll", handleScroll);
-    },[]);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
 
 
@@ -40,7 +40,12 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="hidden md:block">
-                    <Button children={"Contact Me"} />
+                    <a
+                        href="https://wa.me/255654207970?text=Hi%20Kiwoly,%20I%20want%20to%20work%20with%20you."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button children={"Contact Me"} /></a>
                 </div>
                 {/* mobile Menu Button */}
                 <button className="md:hidden p-2 text-foreground" onClick={() => setIsMobileMenuOpen((value) => !value)}>
@@ -53,10 +58,15 @@ const Navbar = () => {
             {isMobileMenuOpen && (<div className="md:hidden glass-strong animate-fade-in">
                 <div className="container mx-auto flex flex-col px-6 py-6 gap-4">
                     {navLinks.map((link, index) => (
-                        <a href={link.href} key={index} onClick={()=> setIsMobileMenuOpen(false)} className="text-lg text-muted-foreground hover:text-foreground py-2"> {link.label}</a>
+                        <a href={link.href} key={index} onClick={() => setIsMobileMenuOpen(false)} className="text-lg text-muted-foreground hover:text-foreground py-2"> {link.label}</a>
 
                     ))}
-                    <Button>Contact Me</Button>
+                    <a
+                        href="https://wa.me/255654207970?text=Hi%20Kiwoly,%20I%20want%20to%20work%20with%20you."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    > <Button className="w-full">Contact Me</Button></a>
+
                 </div>
 
             </div>)
