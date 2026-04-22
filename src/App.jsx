@@ -4,7 +4,7 @@ import Contant from "./sections/Contant"
 import Experience from "./sections/Experience"
 import Hero from "./sections/Hero"
 import Project from "./sections/Project"
-import Testimonials from "./sections/Testimonials"
+
 
 
 function App() {
@@ -17,10 +17,10 @@ function App() {
         <main>
           <Hero />
           <About />
-          <Contant />
           <Project />
           <Experience/>
-          <Testimonials />
+          <Contant/>
+         
         </main>
       </div>
 
