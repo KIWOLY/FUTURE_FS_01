@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin , Send } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../component/Button'
+import emailjs from '@emailjs/browser';
 
 
 const contactInfo = [
@@ -26,6 +27,66 @@ const contactInfo = [
 ]
 
 const Contant = () => {
+  const [formData , setFormData] = useState({
+    name : "",
+    email : "",
+    message : ""
+  })
+
+  const[isSubmitting , setIsSubmitting] = useState({type:null , message : ""});
+  const[isLoading , setIsLoading] = useState(false);
+
+  
+  const handleChange = async (e) => {
+   
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setIsSubmitting({type:null , message : ""});
+
+    try{
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if(!serviceId || !templateId || !publicKey){
+        throw new Error("Email service is not properly configured. Please try again later.");
+      }
+
+      await emailjs.send(serviceId , templateId , {
+        name : formData.name,
+        email : formData.email,
+        message : formData.message
+      } , publicKey);
+
+      setIsSubmitting({type:"success" , message : "Message sent successfully!"});
+      setFormData({
+        name : "",
+        email : "",
+        message : ""
+      })
+
+    }
+    catch(error){
+      console.error("Failed to send message:", error);
+      setIsSubmitting({type:"error" , message : "Failed to send message. Please try again later."});
+
+    }
+    finally{
+      setIsLoading(false);
+    }
+
+  
+  
+  }
+
   return (
     <section id='contact' className='py-32 relative overflow-hidden'>
       <div className='absolute top-0 left-0 w-full h-full'>
@@ -47,26 +108,35 @@ const Contant = () => {
         </div>
         <div className='grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto' >
           <div className='glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-200'>
-            <form className='space-y-6'>
+            <form className='space-y-6' onSubmit={handleSubmit}>
               <div>
                 <label  htmlFor='name' className='block text-sm font-medium mb-2' >Name</label>
-                <input required placeholder='Your name...'   id='name' type='text' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
+                <input value={formData.name} onChange={handleChange} required placeholder='Your name...' name='name'  id='name' type='text' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
 
               </div>
 
               <div>
                 <label htmlFor='email' className='block text-sm font-medium mb-2' >Email</label>
-                <input required placeholder='your@email...'  id='email'  type='email' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
+                <input value={formData.email} onChange={handleChange} required placeholder='your@email...' name='email' id='email'  type='email' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
 
               </div>
 
               <div>
                 <label  htmlFor='message' className='block text-sm font-medium mb-2' >Message</label>
-                <textarea    rows={5}  required placeholder='Your message...' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none'/>
+                <textarea value={formData.message} onChange={handleChange}  name='message' id='message'  rows={5}  required placeholder='Your message...' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none'/>
 
               </div>
 
-              <Button className="w-full" type="submit" size='lg'> Send Message <Send/> </Button>
+              <Button className="w-full" type="submit" size='lg' disabled={isLoading}>
+                {isLoading ? <>Sending... </> : <>Send Message <Send className='w-5 h-5' /></> }
+              </Button>
+              { true && (
+                <p className={`text-sm font-medium mt-4 ${isSubmitting.type === "success" ? "text-green-500" : "text-red-500"}`}>
+                  {isSubmitting.message}
+                </p>
+              ) 
+
+              }
 
             </form>
           </div>
