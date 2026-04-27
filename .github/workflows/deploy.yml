@@ -78,7 +78,7 @@ jobs:
             echo "Running new container..."
             docker run -d \
               --name portfolio \
-              -p 80:80 \
+              -p 8080:80 \
               --restart unless-stopped \
               ${{ env.IMAGE_NAME }}:latest
 
