@@ -2,6 +2,7 @@ import Navbar from "./layout/Navbar"
 import About from "./sections/About"
 import Contant from "./sections/Contant"
 import Experience from "./sections/Experience"
+import Footer from "./sections/Footer"
 import Hero from "./sections/Hero"
 import Project from "./sections/Project"
 import { Helmet } from "react-helmet";
@@ -90,6 +91,8 @@ function App() {
             <Contant />
           </section>
         </main>
+
+        <Footer />
       </div>
     </>
   );

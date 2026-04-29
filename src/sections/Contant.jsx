@@ -1,7 +1,6 @@
-import { Mail, Phone, MapPin , Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import React, { useState } from 'react'
 import Button from '../component/Button'
-import emailjs from '@emailjs/browser';
 
 
 const contactInfo = [
@@ -27,18 +26,18 @@ const contactInfo = [
 ]
 
 const Contant = () => {
-  const [formData , setFormData] = useState({
-    name : "",
-    email : "",
-    message : ""
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
   })
 
-  const[isSubmitting , setIsSubmitting] = useState({type:null , message : ""});
-  const[isLoading , setIsLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState({ type: null, message: "" });
+  const [isLoading, setIsLoading] = useState(false);
 
-  
+
   const handleChange = async (e) => {
-   
+
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -49,42 +48,51 @@ const Contant = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setIsSubmitting({type:null , message : ""});
+    setIsSubmitting({ type: null, message: "" });
 
-    try{
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    try {
+      const apiBaseUrl = import.meta.env.VITE_CRM_API_URL;
 
-      if(!serviceId || !templateId || !publicKey){
-        throw new Error("Email service is not properly configured. Please try again later.");
+      if (!apiBaseUrl) {
+        throw new Error("CRM API is not configured. Please try again later.");
       }
 
-      await emailjs.send(serviceId , templateId , {
-        name : formData.name,
-        email : formData.email,
-        message : formData.message
-      } , publicKey);
+      const response = await fetch(`${apiBaseUrl}/api/leads/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          source: "portfolio"
+        })
+      });
 
-      setIsSubmitting({type:"success" , message : "Message sent successfully!"});
+      if (!response.ok) {
+        throw new Error("Failed to send message. Please try again later.");
+      }
+
+      setIsSubmitting({ type: "success", message: "Message sent successfully!" });
       setFormData({
-        name : "",
-        email : "",
-        message : ""
+        name: "",
+        email: "",
+        message: ""
       })
 
     }
-    catch(error){
+    catch (error) {
       console.error("Failed to send message:", error);
-      setIsSubmitting({type:"error" , message : "Failed to send message. Please try again later."});
+      setIsSubmitting({ type: "error", message: "Failed to send message. Please try again later." });
 
     }
-    finally{
+    finally {
       setIsLoading(false);
     }
 
-  
-  
+
+
   }
 
   return (
@@ -110,31 +118,31 @@ const Contant = () => {
           <div className='glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-200'>
             <form className='space-y-6' onSubmit={handleSubmit}>
               <div>
-                <label  htmlFor='name' className='block text-sm font-medium mb-2' >Name</label>
-                <input value={formData.name} onChange={handleChange} required placeholder='Your name...' name='name'  id='name' type='text' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
+                <label htmlFor='name' className='block text-sm font-medium mb-2' >Name</label>
+                <input value={formData.name} onChange={handleChange} required placeholder='Your name...' name='name' id='name' type='text' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
 
               </div>
 
               <div>
                 <label htmlFor='email' className='block text-sm font-medium mb-2' >Email</label>
-                <input value={formData.email} onChange={handleChange} required placeholder='your@email...' name='email' id='email'  type='email' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
+                <input value={formData.email} onChange={handleChange} required placeholder='your@email...' name='email' id='email' type='email' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all' />
 
               </div>
 
               <div>
-                <label  htmlFor='message' className='block text-sm font-medium mb-2' >Message</label>
-                <textarea value={formData.message} onChange={handleChange}  name='message' id='message'  rows={5}  required placeholder='Your message...' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none'/>
+                <label htmlFor='message' className='block text-sm font-medium mb-2' >Message</label>
+                <textarea value={formData.message} onChange={handleChange} name='message' id='message' rows={5} required placeholder='Your message...' className='w-full px-4 py-3 bg-surface rounded-xl border border-border  focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none' />
 
               </div>
 
               <Button className="w-full" type="submit" size='lg' disabled={isLoading}>
-                {isLoading ? <>Sending... </> : <>Send Message <Send className='w-5 h-5' /></> }
+                {isLoading ? <>Sending... </> : <>Send Message <Send className='w-5 h-5' /></>}
               </Button>
-              { true && (
+              {true && (
                 <p className={`text-sm font-medium mt-4 ${isSubmitting.type === "success" ? "text-green-500" : "text-red-500"}`}>
                   {isSubmitting.message}
                 </p>
-              ) 
+              )
 
               }
 
