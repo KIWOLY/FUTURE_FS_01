@@ -1,72 +1,170 @@
-# Innocent Kiwoly Portfolio
 
-Personal portfolio built with React, Vite, and Tailwind CSS. It highlights experience, projects, and a contact form that posts to a CRM API.
 
-## Features
 
-- Hero, About, Projects, Experience, and Contact sections
-- SEO metadata and structured data for sharing
-- Responsive layout and smooth animations
+##  Cloud-Native Portfolio Deployment (DevOps Project)
 
-## Tech Stack
+##  Project Overview
 
-- React 19 + Vite
-- Tailwind CSS
-- Lucide icons
-- React Helmet
+This project is a cloud-native portfolio application designed to demonstrate real-world DevOps engineering skills.
 
-## Getting Started
+It showcases how a modern application is:
 
-1. Install dependencies:
-   
-	```bash
-	npm install
-	```
+- Containerized using Docker  
+- Automatically deployed using CI/CD pipelines  
+- Orchestrated using Kubernetes  
+- Provisioned using Infrastructure as Code (Terraform)  
+- Hosted on Oracle Cloud Infrastructure (OCI)  
 
-2. Create a local environment file:
 
-	```bash
-	cp .env.example .env
-	```
 
-	If you do not have `.env.example`, create `.env` and set the variable below.
+##  Objectives
 
-3. Start the dev server:
+- Build and deploy a production-ready web application  
+- Automate build and deployment processes  
+- Implement scalable container orchestration  
+- Manage infrastructure using code (IaC)  
+- Simulate real-world DevOps workflows  
 
-	```bash
-	npm run dev
-	```
 
-## Environment Variables
 
-The contact form posts to your CRM API. Set this variable before you build or run the app:
+##  Architecture
 
-```dotenv
-VITE_CRM_API_URL=http://localhost:8000
-```
+Developer → GitHub → CI/CD Pipeline → Docker Image → Kubernetes Cluster → Oracle Cloud Deployment  
 
-For production, use your live CRM URL. In Vite, `VITE_` variables are embedded at build time.
 
-## Build and Preview
+
+##  Tech Stack
+
+##  Application Layer
+- React / Django (Portfolio App)
+- HTML / CSS / JavaScript
+
+
+##  Containerization
+- Docker
+
+
+##  Orchestration
+- Kubernetes
+
+
+## CI/CD
+- GitHub Actions
+
+
+## Cloud
+- Oracle Cloud Infrastructure (OCI)
+
+
+##  Infrastructure as Code
+- Terraform
+
+
+##  DevOps Tools
+- Linux
+- Git / GitHub
+
+
+
+##  Features
+
+- Fully containerized application  
+- Automated build and deployment pipeline  
+- Kubernetes-managed scalable deployment  
+- Infrastructure provisioning using Terraform  
+- Cloud-hosted production deployment  
+- Zero manual deployment after setup  
+
+
+
+##  CI/CD Pipeline
+
+The workflow automatically:
+
+1. Builds the application  
+2. Creates Docker image  
+3. Pushes image to registry  
+4. Deploys to Kubernetes cluster  
+
+Triggered on every push to the main branch.
+
+
+
+## Kubernetes Setup
+
+- Deployment object for application scaling  
+- Service exposure for external access  
+- Auto-healing and restart policies  
+- Horizontal scaling support  
+
+
+
+##  Infrastructure (Terraform)
+
+Terraform is used to provision:
+
+- Compute instances (Oracle Cloud VM)  
+- Networking setup  
+- Optional Kubernetes cluster infrastructure  
+
+
+
+##  Docker Setup
+
+### Build Image
+```bash
+docker build -t portfolio-app .
+
+
+## Run Container
 
 ```bash
-npm run build
-npm run preview
+docker run -p 3000:3000 portfolio-app
 ```
 
-## Docker
+---
 
-Build and run the image locally:
+##  Deployment Flow
 
-```bash
-docker build -t kiwoly-portfolio .
-docker run -p 8080:80 kiwoly-portfolio
-```
+1. Code pushed to GitHub
+2. CI/CD pipeline triggers
+3. Docker image built and pushed
+4. Kubernetes pulls image and deploys
+5. App is live on Oracle Cloud
 
-If you want the contact form to point at a production CRM, build the image after setting `VITE_CRM_API_URL` in your environment or add a build arg in the Dockerfile.
 
-## Lint
 
-```bash
-npm run lint
-```
+##  Key Learning Outcomes
+
+* Real-world CI/CD implementation
+* Kubernetes deployment and scaling
+* Infrastructure as Code with Terraform
+* Cloud deployment on Oracle Cloud
+* End-to-end DevOps workflow
+
+
+
+##  Author
+
+Innocent Kiwoly
+Software & DevOps Engineer
+Kubernetes • Docker • CI/CD • Terraform • Cloud
+
+
+
+##  Status
+
+In progress (actively improving DevOps skills)
+
+
+
+## Future Improvements
+
+* Monitoring with Prometheus + Grafana
+* HTTPS with Nginx Ingress
+* Logging system (ELK stack)
+* Multi-environment deployment (dev/staging/prod)
+
+
+
+
