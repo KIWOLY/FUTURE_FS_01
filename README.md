@@ -1,16 +1,72 @@
-# React + Vite
+# Innocent Kiwoly Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React, Vite, and Tailwind CSS. It highlights experience, projects, and a contact form that posts to a CRM API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Hero, About, Projects, Experience, and Contact sections
+- SEO metadata and structured data for sharing
+- Responsive layout and smooth animations
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + Vite
+- Tailwind CSS
+- Lucide icons
+- React Helmet
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies:
+   
+	```bash
+	npm install
+	```
+
+2. Create a local environment file:
+
+	```bash
+	cp .env.example .env
+	```
+
+	If you do not have `.env.example`, create `.env` and set the variable below.
+
+3. Start the dev server:
+
+	```bash
+	npm run dev
+	```
+
+## Environment Variables
+
+The contact form posts to your CRM API. Set this variable before you build or run the app:
+
+```dotenv
+VITE_CRM_API_URL=http://localhost:8000
+```
+
+For production, use your live CRM URL. In Vite, `VITE_` variables are embedded at build time.
+
+## Build and Preview
+
+```bash
+npm run build
+npm run preview
+```
+
+## Docker
+
+Build and run the image locally:
+
+```bash
+docker build -t kiwoly-portfolio .
+docker run -p 8080:80 kiwoly-portfolio
+```
+
+If you want the contact form to point at a production CRM, build the image after setting `VITE_CRM_API_URL` in your environment or add a build arg in the Dockerfile.
+
+## Lint
+
+```bash
+npm run lint
+```
