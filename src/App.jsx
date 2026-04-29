@@ -61,7 +61,7 @@ function App() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Innocent Kiwoly Portfolio",
-            "url": "http://kiwoly.tlms.live/"
+            "url": "https://kiwoly.tlms.live/"
           })}
         </script>
       </Helmet>
