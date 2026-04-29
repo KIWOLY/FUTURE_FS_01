@@ -1,17 +1,25 @@
 import React from 'react'
 
 const experiences = [
-      {
+    {
         period: "2026",
-        role: "Full Stack Developer Intern" ,
+        role: "Python Developer Intern",
+        company: "Codveda",
+        description:
+            "One-month internship focused on Python application development, debugging, API integration, and solving real-world software challenges.",
+        current: true,
+    },
+    {
+        period: "2026",
+        role: "Full Stack Developer Intern",
         company: "Future Interns",
         description:
             "One-month internship as a Full Stack Developer. involved in designing and developing web applications using both frontend and backend technologies, contributing to real-world projects and gaining industry experience.",
 
-        current: false,
+        current: true,
     },
-    
-  
+
+
     {
         period: "2025 - Present",
         role: "IT Knowledge Sharing Coordinator",
@@ -21,7 +29,7 @@ const experiences = [
 
         current: true,
     },
-      {
+    {
         period: "2025",
         role: "IoT and DevOps",
         company: "International Programme(Blended Intensive Programme (BIP) -Belgium)",
@@ -30,7 +38,7 @@ const experiences = [
 
         current: false,
     },
-  
+
 ];
 
 
@@ -59,14 +67,14 @@ const Experience = () => {
 
                 {/* experinece  */}
                 <div className='space-y-12'>
-                    {experiences.map((experience , ind)=>(
-                        <div key={{ind}} className='relative grid md:grid-cols-2 gap-8 animate-fade-in '
-                        style={{ animationDelay : `${(ind+1)*150}ms`}}>
+                    {experiences.map((experience, ind) => (
+                        <div key={{ ind }} className='relative grid md:grid-cols-2 gap-8 animate-fade-in '
+                            style={{ animationDelay: `${(ind + 1) * 150}ms` }}>
                             {/* Timeline Dot */}
                             <div className='absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10 '></div>
 
                             {/* content */}
-                            <div className={`pl-8 md:pl-0 ${ind%2 ===0 ? "md:pr-16 md:text-right " :"md:col-start-2 md:pl-16"}`}> 
+                            <div className={`pl-8 md:pl-0 ${ind % 2 === 0 ? "md:pr-16 md:text-right " : "md:col-start-2 md:pl-16"}`}>
                                 <div className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 `}>
                                     <span className='text-sm text-primary font-medium'>{experience.period}</span>
                                     <h3 className='text-xl font-semibold mt-2'>{experience.role}</h3>
