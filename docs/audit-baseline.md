@@ -7,6 +7,70 @@ local `npm run build` of the same commit.
 This file will get an "After" column appended in Phase 4. Nothing in this
 document is edited retroactively — new data is appended, not overwritten.
 
+## Branch base sanity check
+
+`fix/portfolio-ssg` branches from `dev` at `ababe10`. Verified `dev` is not
+stale relative to `main`:
+
+```
+$ git fetch origin
+$ git diff --stat origin/main dev
+(empty output)
+```
+
+`origin/main` and `dev` point to identical trees — `main` is just `dev`
+merged in via PRs #13/#14/#15 (`184eadc`, `671281d`, `bd84be6`), no divergent
+content on either side. (The *local* `main` ref was behind `origin/main`
+before this `git fetch` — that's a stale local pointer only; we never built
+off local `main`, so it didn't affect this branch.) Safe to proceed — `dev`
+is current.
+
+## Primary damage: broken OG image and zero preview-bot content
+
+This is the metric that matters most — direct evidence of what recruiters,
+ATS systems, and link-preview bots actually see today.
+
+**`/folio.png` (the `og:image` and favicon target) is a 404:**
+
+```
+$ curl -sI https://kiwoly.tlms.live/folio.png
+HTTP/1.1 404 Not Found
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 26 Jul 2026 07:07:59 GMT
+Content-Type: text/html
+Content-Length: 153
+Connection: keep-alive
+```
+
+**Raw HTML contains zero Open Graph or Twitter Card tags** (a preview bot
+reading raw HTML, not executing JS, sees none of the tags defined in
+`App.jsx` via `react-helmet` — those only exist after client-side React
+mounts):
+
+```
+$ curl -s https://kiwoly.tlms.live/ | grep -iE "og:|twitter:|<title>|canonical"
+  <title>Innocent Kiwoly Portfolio</title>
+```
+
+That's the *only* match — one `<title>` tag, from the static fallback in
+`index.html`. No `og:title`, `og:description`, `og:image`, `og:url`,
+`twitter:card`, or `canonical` link exists anywhere in the bytes a
+link-preview bot fetches.
+
+**Link-preview validator results:**
+
+| Validator | Result |
+|---|---|
+| Facebook Sharing Debugger | Attempted via automated fetch — blocked by login wall ("Log into Facebook to use this tool"). Facebook does not allow anonymous scrapes of the debugger UI, consistent with it being an authenticated tool. **Manual validation pending** — you'll run this yourself and paste results back. |
+| Twitter/X Card Validator | Not attempted automatically (Twitter/X removed public, unauthenticated access to this tool some years ago). **Manual validation pending.** |
+| LinkedIn Post Inspector | Not attempted automatically (requires LinkedIn login for reliable results). **Manual validation pending.** |
+
+Given the raw HTML has no OG/Twitter tags at all and `og:image` 404s, the
+expected result from all three tools today is: no image, generic or missing
+title/description, broken image icon. This will be confirmed against your
+manual runs and recorded here (not overwritten — appended) once you paste
+them back.
+
 ## Raw HTML — what a non-JS client actually receives
 
 ```
@@ -174,6 +238,37 @@ consistent with — not contradictory to — the empty raw-HTML shell shown
 above. It measures something different from "can a link-preview bot or a
 non-rendering crawler read this content," which is the actual problem. This
 is the central risk of trusting Lighthouse alone for a CSR site.
+
+### Itemized Accessibility failures (score 80)
+
+| Audit | Weight | Issue | Specific elements |
+|---|---|---|---|
+| `button-name` | 10 | Buttons with no accessible name — screen readers announce them as just "button" | Mobile nav hamburger toggle: `<button class="md:hidden p-2 text-foreground">` in `Navbar.jsx` — icon-only, no `aria-label` |
+| `color-contrast` | 7 | Text/background contrast ratio insufficient | 14 elements: the "Contact Me" button label span (`Button.jsx` usage in `Hero.jsx`/`Navbar.jsx`), the contact form submit button label, and every project tag pill in `Project.jsx` (`<span class="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground">`) — 12 of the 14 flagged instances are tag pills |
+| `link-name` | 7 | Links with no discernible accessible name | Social icon links in `Hero.jsx` (GitHub/LinkedIn/Instagram `<a>` wrapping only an icon, no `aria-label`/text), and the project card overlay + footer-style icon links in `Project.jsx` (external-link and GitHub icon buttons per project card) |
+
+### Itemized Performance failures (score 80)
+
+| Audit | Weight | Value | Note |
+|---|---|---|---|
+| `total-blocking-time` | 30 | 330 ms | Main thread blocked by JS parse/exec before the page is interactive |
+| `largest-contentful-paint` | 25 | 3.1 s | Nothing paints until the 243 KB JS bundle downloads, parses, and executes React |
+| `first-contentful-paint` | 10 | 2.5 s | Same root cause — no content exists before JS runs |
+| `speed-index` | 10 | 4.8 s | |
+| `interactive` (TTI, unweighted) | 0 | 4.4 s | |
+| `max-potential-fid` | 0 | 430 ms | Longest blocking task on main thread |
+| `mainthread-work-breakdown` (insight) | 0 | 3.6 s | Time spent parsing/compiling/executing JS |
+| `unused-javascript` (insight) | 0 | ~97 KiB est. savings | Dead code in the bundle |
+| `cache-insight` | 0 | ~795 KiB est. savings | Direct consequence of the missing `Cache-Control` headers noted above |
+| `image-delivery-insight` | 0 | ~384 KiB est. savings | Unoptimized `hero-bg.jpg`/`profile4.jpeg`/project PNGs — targeted in Phase 3 item 8 |
+| `render-blocking-insight` | 0 | ~300 ms est. savings | |
+
+Every one of the top-weighted performance failures (TBT, LCP, FCP — 65% of
+the category's weight combined) traces back to the same root cause as the
+crawlability problem: there is no content until the JS bundle executes.
+Astro's static output (Phase 2) should fix FCP/LCP/TBT directly by making
+content paint before any JS runs. The cache and image findings are addressed
+separately in Phase 3.
 
 ## Root cause (confirmed, not hypothesized)
 
