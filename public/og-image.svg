@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0B1220"/>
+  <rect x="28" y="28" width="1144" height="574" rx="32" fill="#0F172A" stroke="#20B2A6" stroke-opacity="0.4"/>
+  <circle cx="1010" cy="136" r="120" fill="#20B2A6" fill-opacity="0.12"/>
+  <circle cx="990" cy="200" r="80" fill="#20B2A6" fill-opacity="0.18"/>
+  <path d="M170 200H280L382 308L485 200H598L437 385L608 470H492L379 372L291 470H170L332 318L170 200Z" fill="#20B2A6"/>
+  <path d="M148 158H230V470H148V158Z" fill="#E6FFFB" fill-opacity="0.9"/>
+  <text x="120" y="176" fill="#7DD3C7" font-family="Arial, sans-serif" font-size="26" letter-spacing="6">KIWOLY</text>
+  <text x="120" y="290" fill="#F8FAFC" font-family="Arial, sans-serif" font-weight="700" font-size="56">Backend Developer</text>
+  <text x="120" y="356" fill="#20B2A6" font-family="Arial, sans-serif" font-weight="700" font-size="56">&amp; Cloud/DevOps Engineer</text>
+  <text x="120" y="440" fill="#B5C5D3" font-family="Arial, sans-serif" font-size="26">Django • AWS • Docker • Kubernetes • Terraform • CI/CD</text>
+  <rect x="120" y="480" width="214" height="52" rx="26" fill="#20B2A6" fill-opacity="0.18" stroke="#20B2A6" stroke-opacity="0.5"/>
+  <text x="155" y="513" fill="#D8F5F2" font-family="Arial, sans-serif" font-weight="700" font-size="22">Deployed on AWS</text>
+  <rect x="354" y="480" width="190" height="52" rx="26" fill="#20B2A6" fill-opacity="0.12" stroke="#20B2A6" stroke-opacity="0.4"/>
+  <text x="390" y="513" fill="#D8F5F2" font-family="Arial, sans-serif" font-weight="700" font-size="22">GitHub Actions</text>
+</svg>

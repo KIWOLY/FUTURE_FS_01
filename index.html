@@ -3,20 +3,116 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/folio.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0f1418" />
 
   <!-- Mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fallback SEO (React Helmet will override) -->
-  <title>Innocent Kiwoly Portfolio</title>
+  <!--
+    These tags are authoritative: they must be readable in the raw HTML
+    response, with no JavaScript executed. Link-preview bots (LinkedIn,
+    WhatsApp, Slack, Twitter/X, Facebook) and most crawlers only ever see
+    this file's bytes as delivered by the server. react-helmet (in App.jsx)
+    still runs client-side and may update these at runtime for users with
+    JS enabled, but it must never be the only place these tags are defined.
+  -->
+  <title>Backend Developer & Cloud/DevOps Engineer | Innocent Kiwoly</title>
 
   <meta name="description"
-    content="Portfolio website of Innocent Kiwoly, DevOps Engineer and Full-Stack Developer." />
+    content="Innocent Kiwoly is a Backend Developer & Cloud/DevOps Engineer specializing in Django, AWS, Docker, Kubernetes, Terraform, CI/CD, and cloud infrastructure. Available for remote work." />
+
+  <meta name="keywords"
+    content="Backend Developer, Cloud Engineer, DevOps Engineer, AWS, Kubernetes, Docker, Terraform, CI/CD, Django, React, Flutter, Tanzania Developer" />
+
+  <meta name="author" content="Innocent Kiwoly" />
+
+  <link rel="canonical" href="https://kiwoly.tlms.live/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Innocent Kiwoly Portfolio" />
+  <meta property="og:title" content="Innocent Kiwoly | Backend Developer & Cloud/DevOps Engineer" />
+  <meta property="og:description"
+    content="Backend Developer & Cloud/DevOps Engineer specializing in Django, AWS, Docker, Kubernetes, Terraform, CI/CD, and cloud infrastructure. Available for remote work." />
+  <meta property="og:url" content="https://kiwoly.tlms.live/" />
+  <meta property="og:image" content="https://kiwoly.tlms.live/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Innocent Kiwoly — Backend & Cloud/DevOps Engineer" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Innocent Kiwoly | Backend Developer & Cloud/DevOps Engineer" />
+  <meta name="twitter:description"
+    content="Backend Developer & Cloud/DevOps Engineer specializing in Django, AWS, Docker, Kubernetes, Terraform, CI/CD, and cloud infrastructure. Available for remote work." />
+  <meta name="twitter:image" content="https://kiwoly.tlms.live/og-image.png" />
+  <meta name="twitter:image:alt" content="Innocent Kiwoly — Backend & Cloud/DevOps Engineer" />
+
+  <!-- Structured data (schema.org Person) — must be static so search engines
+       and any tool reading raw HTML can parse it without executing JS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Innocent Kiwoly",
+    "url": "https://kiwoly.tlms.live/",
+    "jobTitle": "Backend Developer & Cloud/DevOps Engineer",
+    "description": "Backend Developer and Cloud/DevOps Engineer specializing in Django, AWS, Docker, Kubernetes, Terraform, CI/CD, and cloud infrastructure.",
+    "image": "https://kiwoly.tlms.live/og-image.png",
+    "email": "mailto:ikiwoly@gmail.com",
+    "sameAs": [
+      "https://github.com/KIWOLY",
+      "https://www.linkedin.com/in/innocent-kiwoly-35b8b1355/"
+    ],
+    "knowsAbout": [
+      "Django",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "CI/CD",
+      "Cloud Infrastructure",
+      "React",
+      "Flutter"
+    ]
+  }
+  </script>
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!--
+    Non-JS fallback. Anything relying on raw HTML — text browsers, some
+    crawlers, accessibility tools that don't execute JS, or JS disabled/
+    blocked by the client — gets real content here instead of a blank page.
+  -->
+  <noscript>
+    <main style="font-family: sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; color: #f0f2f5; background: #0f1418;">
+      <h1>Innocent Kiwoly — DevOps Engineer &amp; Full-Stack Developer</h1>
+      <p>
+        I build applications and scalable DevOps solutions, working with
+        Kubernetes, Docker, CI/CD pipelines, Terraform, Django, React, and
+        Flutter. Currently available for remote work.
+      </p>
+      <p>
+        <a href="https://github.com/KIWOLY" style="color:#20b2a6;">GitHub</a>
+        &middot;
+        <a href="https://www.linkedin.com/in/innocent-kiwoly-35b8b1355/" style="color:#20b2a6;">LinkedIn</a>
+        &middot;
+        <a href="mailto:ikiwoly@gmail.com" style="color:#20b2a6;">ikiwoly@gmail.com</a>
+      </p>
+    </main>
+  </noscript>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

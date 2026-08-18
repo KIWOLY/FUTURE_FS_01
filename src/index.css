@@ -29,14 +29,18 @@
     scroll-behavior: smooth;
   }
 
-  button {
-    cursor: pointer;
-  }
-
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: "Inter", sans-serif;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .mono {
+    font-family: "JetBrains Mono", "SFMono-Regular", "Consolas", monospace;
   }
 
   .font-serif {
@@ -67,8 +71,12 @@
   }
 
   .group:hover rect {
-  stroke-dashoffset: 0;
-}
+    stroke-dashoffset: 0;
+  }
+
+  .tech-card {
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+  }
 }
 
 @layer utilities {

@@ -8,6 +8,8 @@ const projects = [
     description: "Make easy to buying and selling product online",
     image: "/project/e-commerce.png",
     tags: ["React", "Django", "Postgress"],
+    deployment: "Dockerized backend + Nginx delivery on VPS",
+    proof: "Production-ready API",
     link: "#",
     github: "https://github.com/KIWOLY/e-commerce"
   },
@@ -15,7 +17,9 @@ const projects = [
     title: "Air quality Monitoring",
     description: "Monitoring Air quality by measuring air polluntant gas",
     image: "/project/air_quality.png",
-    tags: ["React", "Django", "Postgress", "IOT", "Lorawan", "Influx DB"],
+    tags: ["Django", "PostgreSQL", "Docker", "CI/CD", "Oracle Cloud", "IOT", "Lorawan", "InfluxDB"],
+    deployment: "Docker + Nginx deployment on Oracle Cloud VPS with live sensor telemetry",
+    proof: "AWS/Oracle Cloud + CI/CD",
     link: "#",
     github: "https://github.com/AI-NextGen-Innovate-Lab/AIR-QUALITY"
   },
@@ -24,6 +28,8 @@ const projects = [
     description: "Platform which facilitate the student on finding the online material",
     image: "/project/e-learning.png",
     tags: ["React", "Django", "Postgress"],
+    deployment: "Django app packaged in Docker for repeatable deployment",
+    proof: "Containerized backend",
     link: "#",
     github: "https://github.com/KIWOLY/django-elearning"
   }
@@ -85,6 +91,18 @@ const Project = () => {
 
                 </div>
                 <p className='text-muted-foreground text-sm '>{project.description}</p>
+
+                <div className='flex flex-wrap gap-2'>
+                  <span className='inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-primary'>
+                    {project.proof}
+                  </span>
+                </div>
+
+                <div className='rounded-xl border border-border/60 bg-background/60 p-3'>
+                  <p className='mb-2 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground'>Deployment</p>
+                  <p className='mono text-xs sm:text-sm text-foreground/90'>{project.deployment}</p>
+                </div>
+
                 <div className='flex flex-wrap gap-2'>
                   {project.tags.map((tag, tagindex) => (
                     <span key={tagindex} className='px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground

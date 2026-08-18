@@ -55,7 +55,7 @@ const Experience = () => {
                 <h2 className='text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground animate-fade-in animation-delay-100'>
                     Experience that <span className='font-serif italic font-normal text-white'> speak volumes.</span>  </h2>
                 <p className='text-muted-foreground animate-fade-in animation-delay-200'>
-                    A timeline of my growth as a Full Stack Developer with DevOps skills, showcasing international experience, leadership in student communities, and hands-on involvement in designing, building, and deploying real-world applications using modern technologies.
+                    A timeline of my growth as a backend and cloud-focused engineer, showcasing international experience, leadership in student communities, and hands-on involvement in building, deploying, and operating real-world systems with modern infrastructure tools.
                 </p>
 
             </div>
@@ -68,7 +68,7 @@ const Experience = () => {
                 {/* experinece  */}
                 <div className='space-y-12'>
                     {experiences.map((experience, ind) => (
-                        <div key={{ ind }} className='relative grid md:grid-cols-2 gap-8 animate-fade-in '
+                        <div key={`${experience.role}-${experience.company}-${experience.period}`} className='relative grid md:grid-cols-2 gap-8 animate-fade-in '
                             style={{ animationDelay: `${(ind + 1) * 150}ms` }}>
                             {/* Timeline Dot */}
                             <div className='absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10 '></div>

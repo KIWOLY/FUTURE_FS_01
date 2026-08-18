@@ -4,6 +4,7 @@ import Contant from "./sections/Contant"
 import Experience from "./sections/Experience"
 import Footer from "./sections/Footer"
 import Hero from "./sections/Hero"
+import Infrastructure from "./sections/Infrastructure"
 import Project from "./sections/Project"
 import { Helmet } from "react-helmet";
 
@@ -12,46 +13,60 @@ function App() {
     <>
       <Helmet>
         <title>
-          Innocent Kiwoly | DevOps Engineer | Kubernetes, Docker, CI/CD
+          Backend Developer & Cloud/DevOps Engineer | Innocent Kiwoly
         </title>
 
         <meta
           name="description"
-          content="Innocent Kiwoly is a DevOps Engineer and Full-Stack Developer specializing in Kubernetes, Docker, CI/CD pipelines, Terraform, Django, React, and Flutter. Available for remote work."
+          content="Innocent Kiwoly is a Backend Developer & Cloud/DevOps Engineer specializing in Django, AWS, Docker, Kubernetes, Terraform, CI/CD, and cloud infrastructure. Available for remote work."
         />
 
         <meta
           name="keywords"
-          content="DevOps Engineer, Kubernetes, Docker, CI/CD, Terraform, Django, React, Flutter, Cloud Engineer, Tanzania Developer"
+          content="Backend Developer, Cloud Engineer, DevOps Engineer, AWS, Kubernetes, Docker, Terraform, CI/CD, Django, React, Flutter, Tanzania Developer"
         />
 
         <meta name="author" content="Innocent Kiwoly" />
 
-        {/* Open Graph (for sharing links) */}
-        <meta property="og:title" content="Innocent Kiwoly Portfolio" />
-        <meta property="og:description" content="DevOps Engineer & Full-Stack Developer Portfolio" />
+        {/* Open Graph (for sharing links) — kept in sync with the static
+            tags in index.html, which are authoritative for non-JS clients */}
+        <meta property="og:site_name" content="Innocent Kiwoly Portfolio" />
+        <meta property="og:title" content="Innocent Kiwoly | Backend Developer & Cloud/DevOps Engineer" />
+        <meta property="og:description" content="Backend Developer & Cloud/DevOps Engineer specializing in Django, AWS, Docker, Kubernetes, Terraform, CI/CD, and cloud infrastructure. Available for remote work." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://kiwoly.tlms.live/" />
-        <meta property="og:image" content="/folio.png" />
+        <meta property="og:url" content="https://kiwoly.tlms.live/" />
+        <meta property="og:image" content="https://kiwoly.tlms.live/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Innocent Kiwoly | Backend Developer & Cloud/DevOps Engineer" />
+        <meta name="twitter:description" content="Backend Developer & Cloud/DevOps Engineer specializing in Django, AWS, Docker, Kubernetes, Terraform, CI/CD, and cloud infrastructure. Available for remote work." />
+        <meta name="twitter:image" content="https://kiwoly.tlms.live/og-image.png" />
+
+        <link rel="canonical" href="https://kiwoly.tlms.live/" />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Innocent Kiwoly",
-            "url": "http://kiwoly.tlms.live/",
-            "jobTitle": "DevOps Engineer",
+            "url": "https://kiwoly.tlms.live/",
+            "jobTitle": "Backend Developer & Cloud/DevOps Engineer",
+            "image": "https://kiwoly.tlms.live/og-image.png",
+            "email": "mailto:ikiwoly@gmail.com",
             "sameAs": [
               "https://github.com/KIWOLY",
               "https://www.linkedin.com/in/innocent-kiwoly-35b8b1355/"
             ],
             "knowsAbout": [
-              "Kubernetes",
-              "Docker",
-              "CI/CD",
-              "Terraform",
               "Django",
+              "AWS",
+              "Docker",
+              "Kubernetes",
+              "Terraform",
+              "CI/CD",
+              "Cloud Infrastructure",
               "React",
               "Flutter"
             ]
@@ -77,6 +92,10 @@ function App() {
 
           <section id="about">
             <About />
+          </section>
+
+          <section id="infrastructure">
+            <Infrastructure />
           </section>
 
           <section id="projects">
