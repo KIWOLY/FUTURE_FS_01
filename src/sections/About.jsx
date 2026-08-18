@@ -3,18 +3,6 @@ import React from 'react'
 
 const highlights = [
   {
-    icon: Code2,
-    title: "Software Engineering",
-    description:
-      "I design and develop scalable, maintainable software solutions using clean code principles, modern architectures, and best industry practices."
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Development",
-    description:
-      "I build responsive and high-performance mobile applications using Flutter, focusing on intuitive UI/UX and seamless user experience."
-  },
-  {
     icon: Server,
     title: "Backend Development",
     description:
@@ -25,6 +13,18 @@ const highlights = [
     title: "DevOps & Cloud",
     description:
       "I apply DevOps practices including CI/CD, containerization, and cloud deployment to automate workflows and improve system performance."
+  },
+  {
+    icon: Code2,
+    title: "Software Engineering",
+    description:
+      "I design and develop scalable, maintainable software solutions using clean code principles, modern architectures, and best industry practices."
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile Development",
+    description:
+      "I build responsive and high-performance mobile applications using Flutter, focusing on intuitive UI/UX and seamless user experience."
   }
 ];
 
@@ -41,20 +41,20 @@ const About = () => {
             <h2 className='text-4xl md:text-5xl  font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground'>Building the future <span className='font-serif italic font-normal text-white'> one component at a time</span></h2>
             <div className='space-y-4 text-muted-foreground animate-fade-in animation-delay-200'>
               <p>
-                I am a Software and DevOps Engineer focused on building scalable web and mobile applications. I specialize in backend development using Django, where I design reliable APIs and systems that are efficient and easy to maintain. I enjoy solving real-world problems by delivering simple and effective solutions.
+                I am a Backend Developer and Cloud/DevOps Engineer focused on building scalable, production-ready systems. I specialize in backend development using Django, where I design reliable APIs and data-driven systems that are efficient and easy to maintain.
               </p>
 
               <p>
-                I build complete applications using React and Flutter, working across the full stack from frontend to backend. I turn ideas into production-ready systems that are functional, user-friendly, and scalable.
+                I implement DevOps and cloud practices to deploy and manage applications in production — using Docker for containerization, Kubernetes for orchestration, Terraform for infrastructure as code, AWS for cloud infrastructure, and CI/CD pipelines to automate deployment. My focus is on building systems that are reliable, scalable, and ready for real-world use.
               </p>
 
               <p>
-                I also implement DevOps practices to deploy and manage applications in production. I work with Docker for containerization, Kubernetes for managing applications at scale, and CI/CD pipelines to automate deployment. My focus is on building systems that are reliable, scalable, and ready for real-world use.
+                I also build across the stack when needed, using React and Flutter to deliver complete, user-friendly applications from frontend to backend.
               </p>
             </div>
             <div className='glass rounded-2xl glow-border animate-fade-in animation-delay-300'>
               <p className='text-lg italic text-foreground font-medium i'>
-                " My mission is to design and develop innovative digital solutions that bridge the gap between technology and real-world challenges. I am driven to master full-stack development and DevOps, building systems that are not only functional but scalable, efficient, and future-ready."
+                "My mission is to design and develop innovative digital solutions that bridge the gap between technology and real-world challenges. I am driven to master backend systems and cloud/DevOps engineering, building systems that are not only functional but scalable, efficient, and future-ready."
               </p>
             </div>
 
