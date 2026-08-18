@@ -35,80 +35,80 @@ const TechLogo = ({ kind }) => {
             return (
                 <svg {...common} viewBox="0 0 48 48">
                     <path d="M24 6 10 14v20l14 8 14-8V14L24 6Z" stroke="currentColor" fill="none" strokeWidth="2" />
-                    <path d="M19 18h10l-1.5 8.5h-7L19 18Zm-4 10h18v2H15v-2Z" fill="currentColor"/>
+                    <path d="M19 18h10l-1.5 8.5h-7L19 18Zm-4 10h18v2H15v-2Z" fill="currentColor" />
                 </svg>
             );
         case 'docker':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M6 15.5h2.5v2.5H6zm3.5-3h2.5v2.5h-2.5zm3.5 0h2.5v2.5H13zm3.5-3h2.5v2.5H16.5zm-10 6h2.5v2.5H6.5zm10 0h2.5v2.5H16.5zm-7 0h2.5v2.5H9.5zm7-6h2.5v2.5H16.5zM9 17.5h3.5v2.5H9zm6.5 0h3v2.5h-3z" fill="currentColor"/>
-                    <path d="M4 18.5h16M7 12.5h2.5M11 12.5h2.5M15 12.5h2.5M9 9.5h3.5M13 9.5h3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+                    <path d="M6 15.5h2.5v2.5H6zm3.5-3h2.5v2.5h-2.5zm3.5 0h2.5v2.5H13zm3.5-3h2.5v2.5H16.5zm-10 6h2.5v2.5H6.5zm10 0h2.5v2.5H16.5zm-7 0h2.5v2.5H9.5zm7-6h2.5v2.5H16.5zM9 17.5h3.5v2.5H9zm6.5 0h3v2.5h-3z" fill="currentColor" />
+                    <path d="M4 18.5h16M7 12.5h2.5M11 12.5h2.5M15 12.5h2.5M9 9.5h3.5M13 9.5h3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                 </svg>
             );
         case 'kubernetes':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M12 2.8 18.8 6v12L12 21.2 5.2 18V6L12 2.8Z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <path d="M12 7.2v9.6M8.5 9.3l7 5.4M15.5 9.3l-7 5.4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M12 2.8 18.8 6v12L12 21.2 5.2 18V6L12 2.8Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                    <path d="M12 7.2v9.6M8.5 9.3l7 5.4M15.5 9.3l-7 5.4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
             );
         case 'terraform':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M9 4.5 15.5 8v11.5L9 16V4.5Zm6 0L22.5 8v11.5L15 16V4.5Zm-12 3L9 10.5v11.5L3 17V7.5Z" fill="currentColor" opacity="0.8"/>
+                    <path d="M9 4.5 15.5 8v11.5L9 16V4.5Zm6 0L22.5 8v11.5L15 16V4.5Zm-12 3L9 10.5v11.5L3 17V7.5Z" fill="currentColor" opacity="0.8" />
                 </svg>
             );
         case 'postgres':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M8 5.5c0-1.1 1.2-2 4-2s4 .9 4 2v13c0 1.1-1.2 2-4 2s-4-.9-4-2v-13Z" fill="currentColor" opacity="0.18"/>
-                    <path d="M8 5.5c0-1.1 1.2-2 4-2s4 .9 4 2v13c0 1.1-1.2 2-4 2s-4-.9-4-2v-13Z" stroke="currentColor"/>
-                    <path d="M8 8.5h8M8 12.5h8M8 16.5h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M8 5.5c0-1.1 1.2-2 4-2s4 .9 4 2v13c0 1.1-1.2 2-4 2s-4-.9-4-2v-13Z" fill="currentColor" opacity="0.18" />
+                    <path d="M8 5.5c0-1.1 1.2-2 4-2s4 .9 4 2v13c0 1.1-1.2 2-4 2s-4-.9-4-2v-13Z" stroke="currentColor" />
+                    <path d="M8 8.5h8M8 12.5h8M8 16.5h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
             );
         case 'actions':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="7" stroke="currentColor"/>
-                    <path d="M12 6v6l4 2" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="12" r="7" stroke="currentColor" />
+                    <path d="M12 6v6l4 2" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             );
         case 'github':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M9 18c-4 1.2-4-2-5-2m10 4v-3.9c0-1.1-.1-1.5-.5-2 2.6-.3 5.3-1.3 5.3-5.8 0-1.2-.4-2.2-1.1-3 .1-.3.5-1.6-.1-3.3 0 0-.9-.3-3.1 1.1A10.7 10.7 0 0 0 12 5.8a10.7 10.7 0 0 0-2.8.4C6.9 4.9 6 5.2 6 5.2c-.6 1.7-.2 3-.1 3.3-.7.8-1.1 1.8-1.1 3 0 4.5 2.7 5.5 5.3 5.8-.4.3-.7.9-.8 1.8L9 18Z" fill="currentColor" stroke="none"/>
+                    <path d="M9 18c-4 1.2-4-2-5-2m10 4v-3.9c0-1.1-.1-1.5-.5-2 2.6-.3 5.3-1.3 5.3-5.8 0-1.2-.4-2.2-1.1-3 .1-.3.5-1.6-.1-3.3 0 0-.9-.3-3.1 1.1A10.7 10.7 0 0 0 12 5.8a10.7 10.7 0 0 0-2.8.4C6.9 4.9 6 5.2 6 5.2c-.6 1.7-.2 3-.1 3.3-.7.8-1.1 1.8-1.1 3 0 4.5 2.7 5.5 5.3 5.8-.4.3-.7.9-.8 1.8L9 18Z" fill="currentColor" stroke="none" />
                 </svg>
             );
         case 'python':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M9 4.5h6a2 2 0 0 1 2 2v2.5H9V6.5a2 2 0 0 1 2-2Zm-3 4h12v6.5a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8.5Z" fill="currentColor" opacity="0.16"/>
-                    <path d="M9 4.5h6a2 2 0 0 1 2 2v2.5M9 4.5v2.5M15 19.5H9a2 2 0 0 1-2-2V11.5M15 19.5v-2.5M9 8.5h6" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M9 4.5h6a2 2 0 0 1 2 2v2.5H9V6.5a2 2 0 0 1 2-2Zm-3 4h12v6.5a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8.5Z" fill="currentColor" opacity="0.16" />
+                    <path d="M9 4.5h6a2 2 0 0 1 2 2v2.5M9 4.5v2.5M15 19.5H9a2 2 0 0 1-2-2V11.5M15 19.5v-2.5M9 8.5h6" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
             );
         case 'django':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M7 5.5h8.5a2.5 2.5 0 0 1 2.5 2.5v8.5H12v-7.5H9.5v7.5H7V8A2.5 2.5 0 0 1 7 5.5Z" fill="currentColor"/>
+                    <path d="M7 5.5h8.5a2.5 2.5 0 0 1 2.5 2.5v8.5H12v-7.5H9.5v7.5H7V8A2.5 2.5 0 0 1 7 5.5Z" fill="currentColor" />
                 </svg>
             );
         case 'react':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3" stroke="currentColor"/>
-                    <path d="M12 2.5v4M12 17.5v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2.5 12h4M17.5 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" strokeLinecap="round"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" />
+                    <path d="M12 2.5v4M12 17.5v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2.5 12h4M17.5 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" strokeLinecap="round" />
                 </svg>
             );
         case 'tailwind':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M6.5 14.5c.8-2 1.9-3 3.5-3 1.7 0 2.8.9 3.6 2.4 1.1-1.8 2.7-2.8 4.9-2.8 1.9 0 3.5 1.2 4 3.6-1.1.5-2.1.8-3 .8-1.8 0-2.8-1.1-3.5-2.6-.9 1.5-2.1 2.6-3.8 2.6-1.6 0-2.8-.9-3.7-2.4Z" fill="currentColor" opacity="0.9"/>
+                    <path d="M6.5 14.5c.8-2 1.9-3 3.5-3 1.7 0 2.8.9 3.6 2.4 1.1-1.8 2.7-2.8 4.9-2.8 1.9 0 3.5 1.2 4 3.6-1.1.5-2.1.8-3 .8-1.8 0-2.8-1.1-3.5-2.6-.9 1.5-2.1 2.6-3.8 2.6-1.6 0-2.8-.9-3.7-2.4Z" fill="currentColor" opacity="0.9" />
                 </svg>
             );
         case 'flutter':
             return (
                 <svg {...common} viewBox="0 0 24 24">
-                    <path d="M13.5 2.5 4.5 11.5l3.5 3.5 9-9h-3.5ZM13.5 13.5 9 18l4.5 4.5h3.5l-4.5-4.5 4.5-4.5h-3.5Z" fill="currentColor"/>
+                    <path d="M13.5 2.5 4.5 11.5l3.5 3.5 9-9h-3.5ZM13.5 13.5 9 18l4.5 4.5h3.5l-4.5-4.5 4.5-4.5h-3.5Z" fill="currentColor" />
                 </svg>
             );
         default:
@@ -226,7 +226,7 @@ const Hero = () => {
                         {/* profile image */}
                         <div className='relative max-w-md mx-auto'>
                             <div className='relative glass rounded-3xl p-2 glow-border'>
-                                <img src="/profile4.jpeg" alt="Innocent Kiwoly DevOps Engineer profile photo"  loading="lazy"    className='w-full aspect-[4/5] object-cover rounded-2xl' />
+                                <img src="/profile-kiwoly.svg" alt="Innocent Kiwoly Backend Developer & Cloud/DevOps Engineer profile illustration" loading="lazy" className='w-full aspect-[4/5] object-cover rounded-2xl' />
 
                                 {/* Floating Badge */}
                                 <div className='absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float '>
