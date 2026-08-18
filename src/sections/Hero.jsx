@@ -226,7 +226,7 @@ const Hero = () => {
                         {/* profile image */}
                         <div className='relative max-w-md mx-auto'>
                             <div className='relative glass rounded-3xl p-2 glow-border'>
-                                <img src="/profile-kiwoly.svg" alt="Innocent Kiwoly Backend Developer & Cloud/DevOps Engineer profile illustration" loading="lazy" className='w-full aspect-[4/5] object-cover rounded-2xl' />
+                                <img src="/profile4.jpeg" alt="Innocent Kiwoly Backend Developer & Cloud/DevOps Engineer profile photo" loading="lazy" className='w-full aspect-[4/5] object-cover rounded-2xl' />
 
                                 {/* Floating Badge */}
                                 <div className='absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float '>

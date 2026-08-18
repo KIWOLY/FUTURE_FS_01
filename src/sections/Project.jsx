@@ -19,8 +19,8 @@ const projects = [
     image: "/project/air_quality.png",
     tags: ["Django", "PostgreSQL", "Docker", "CI/CD", "Oracle Cloud", "IOT", "Lorawan", "InfluxDB"],
     deployment: "Docker + Nginx deployment on Oracle Cloud VPS with live sensor telemetry",
-    proof: "AWS/Oracle Cloud + CI/CD",
-    link: "#",
+    proof: "Oracle Cloud + CI/CD",
+    link: "https://airquality.tlms.live/",
     github: "https://github.com/AI-NextGen-Innovate-Lab/AIR-QUALITY"
   },
   {
