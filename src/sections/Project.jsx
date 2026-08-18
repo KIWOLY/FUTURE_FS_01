@@ -4,18 +4,18 @@ import SvgButton from '../component/SvgButton'
 
 const projects = [
   {
-    title: "e-commerce",
-    description: "Make easy to buying and selling product online",
-    image: "/project/e-commerce.png",
-    tags: ["React", "Django", "Postgress"],
-    deployment: "Dockerized backend + Nginx delivery on VPS",
-    proof: "Production-ready API",
-    link: "#",
-    github: "https://github.com/KIWOLY/e-commerce"
+    title: "Data as Service",
+    description: "Mobile app platform which collects air pollutant data and makes it accessible to users.",
+    image: "/project/daas.jpeg",
+    tags: ["Flutter", "Django", "PostgreSQL", "InfluxDB", "Docker", "CI/CD", "Oracle Cloud", "Mosquitto", "Telegraf"],
+    deployment: "Dockerized backend + mobile-first data collection pipeline on Oracle Cloud",
+    proof: "Cloud + IoT telemetry",
+    link: "https://github.com/KIWOLY/Data-as-Service-mobile-app.git",
+    github: "https://github.com/KIWOLY/Data-as-Service-mobile-app.git"
   },
   {
     title: "Air quality Monitoring",
-    description: "Monitoring Air quality by measuring air polluntant gas",
+    description: "Monitoring Air quality by measuring air pollutant gas",
     image: "/project/air_quality.png",
     tags: ["Django", "PostgreSQL", "Docker", "CI/CD", "Oracle Cloud", "IOT", "Lorawan", "InfluxDB"],
     deployment: "Docker + Nginx deployment on Oracle Cloud VPS with live sensor telemetry",
@@ -24,19 +24,15 @@ const projects = [
     github: "https://github.com/AI-NextGen-Innovate-Lab/AIR-QUALITY"
   },
   {
-    title: "e-learning",
-    description: "Platform which facilitate the student on finding the online material",
-    image: "/project/e-learning.png",
+    title: "e-commerce",
+    description: "Make easy to buying and selling product online",
+    image: "/project/e-commerce.png",
     tags: ["React", "Django", "Postgress"],
-    deployment: "Django app packaged in Docker for repeatable deployment",
-    proof: "Containerized backend",
+    deployment: "Dockerized backend + Nginx delivery on VPS",
+    proof: "Production-ready API",
     link: "#",
-    github: "https://github.com/KIWOLY/django-elearning"
+    github: "https://github.com/KIWOLY/e-commerce"
   }
-
-
-
-
 ]
 
 
@@ -62,7 +58,7 @@ const Project = () => {
               style={{ animationDelay: `${(index + 1) * 100}ms ` }}>
               {/* image */}
               <div className='relative overflow-hidden aspect-video'>
-                <img src={project.image} alt={project.title}  loading="lazy"    className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' />
+                <img src={project.image} alt={project.title} loading="lazy" className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' />
                 <div className='absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60' />
                 {/* overlay Links */}
                 <div className='absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transtion-opacity duration-300'>

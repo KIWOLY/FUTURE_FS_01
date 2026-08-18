@@ -1,0 +1,12 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" rx="44" fill="#0B1220"/>
+  <rect x="28" y="28" width="744" height="944" rx="36" fill="#101B2A" stroke="#20B2A6" stroke-opacity="0.35"/>
+  <circle cx="400" cy="360" r="210" fill="#20B2A6" fill-opacity="0.12"/>
+  <circle cx="400" cy="250" r="120" fill="#20B2A6" fill-opacity="0.18"/>
+  <path d="M270 300H366L454 402L544 300H642L491 490L648 700H556L445 580L335 700H246L405 490L270 300Z" fill="#20B2A6"/>
+  <path d="M260 232H340V718H260V232Z" fill="#E6FFFB" fill-opacity="0.8"/>
+  <path d="M432 232H514V718H432V232Z" fill="#E6FFFB" fill-opacity="0.78"/>
+  <path d="M317 750H483V805H317V750Z" fill="#0F172A"/>
+  <path d="M329 814H471V860H329V814Z" fill="#20B2A6" fill-opacity="0.25"/>
+  <text x="96" y="900" fill="#DFFAF6" font-family="Arial, sans-serif" font-size="58" font-weight="700">KIWOLY</text>
+</svg>
